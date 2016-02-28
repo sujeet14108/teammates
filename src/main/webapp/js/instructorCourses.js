@@ -19,12 +19,12 @@ function prepareTimeZoneInput() {
         console.log(name);
         selectElement.appendChild(o);
     });
-    $("#"+COURSE_TIME_ZONE).selectize({selectOnTab: true});
+    $("#" + COURSE_TIME_ZONE).selectize({selectOnTab: true});
 }
 
 function autoDetectTimeZone() {
     var detectedTimeZone = moment.tz.guess();
-    getSelectizeInstance("#"+COURSE_TIME_ZONE).setValue(detectedTimeZone);
+    getSelectizeInstance("#" + COURSE_TIME_ZONE).setValue(detectedTimeZone);
 }
 
 /**
@@ -34,7 +34,7 @@ function autoDetectTimeZone() {
 function verifyCourseData() {
     var courseID = $("#"+COURSE_ID).val();
     var courseName = $("#"+COURSE_NAME).val();
-    var courseTimeZone = getSelectizeInstance("#"+COURSE_TIME_ZONE).getValue();
+    var courseTimeZone = getSelectizeInstance("#" + COURSE_TIME_ZONE).getValue();
     
     var allErrorMessage = "";
     
