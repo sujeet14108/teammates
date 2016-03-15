@@ -7,7 +7,18 @@ $(document).ready(function(){
 			$('#commentText').focus();
 		}
 	});
-	
+	$(function() {
+        var availableTutorials = [
+           "Keep it up",
+           "Good Work",
+           "Nice",
+           "Poor, need improvement",
+        ];
+        $( "#commentText" ).autocomplete({
+           source: availableTutorials,
+           autoFocus:true
+        });
+     });
 	$('form[name="form_commentadd"]').submit(function(){
         return checkComment(this);		
     });
