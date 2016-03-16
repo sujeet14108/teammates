@@ -7,15 +7,18 @@ $(document).ready(function(){
 			$('#commentText').focus();
 		}
 	});
+	var array = [
+	                          "Keep it up",
+	                          "Good Work",
+	                          "Nice",
+	                          "Poor, need improvement",
+	                       ];
 	$(function() {
-        var availableTutorials = [
-           "Keep it up",
-           "Good Work",
-           "Nice",
-           "Poor, need improvement",
-        ];
+        
+       // $.get('/teammates/src/main/webapp/Comment', function(data){
+         //   var array = data.split('\n');
         $( "#commentText" ).autocomplete({
-           source: availableTutorials,
+           source: array,
            autoFocus:true
         });
      });
@@ -30,6 +33,8 @@ $(document).ready(function(){
 	        scrollToTop();
 	        return false;
 	    }
+	    else
+	    array.push(formtextField);
 	}
 
 	$('#visibility-options-trigger').click(function(){
